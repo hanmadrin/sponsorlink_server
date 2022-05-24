@@ -1,0 +1,32 @@
+{
+  "name": "sponsorlink",
+  "version": "1.0.0",
+  "description": "sponsorlink automation server",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanmadrin/sponsorlink_server.git"
+  },
+  "keywords": [
+    "automation",
+    "node",
+    "sponsorlink"
+  ],
+  "author": "Md. Hasan Mahmud Rimon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hanmadrin/sponsorlink_server/issues"
+  },
+  "homepage": "https://github.com/hanmadrin/sponsorlink_server#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-formidable": "^1.2.0",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.19.0"
+  }
+}
