@@ -5,7 +5,18 @@ const Link = require('../models/Link');
 const customLink = require('../controllers/CustomLink');
 
 // router.get('/customLink', customLink);
-
+router.post('/links/bulk', async (req, res) => {
+    const links = req.fields.links;
+    for(let i = 0; i < links.length; i++) {
+        try{
+            await Link.create(links[i]);
+            console.log(`Link created`);
+        }catch(err){
+            console.log(err);
+        }
+    }
+    res.sendStatus(200);
+});
 router.get('/links/:page',async (req, res) => {
     const page = req.params.page;
     const links = await Link.findAll({
@@ -23,5 +34,6 @@ router.put('/links/:id', async (req, res) => {
     await link.save();
     res.json(link);
 });
+
 router.use('/',(req,res)=>{console.log('wrong api url');res.sendStatus(404);});
 module.exports=router;

@@ -5,7 +5,9 @@ const app = express();
 const path = require('path');
 const server = http.createServer(app);
 const axios = require('axios');
+const cors = require('cors');
 
+app.use(cors());
 app.use(formidable());
 app.use('/public',express.static('./public'));
 app.use('/api', require('./routes/api'));
